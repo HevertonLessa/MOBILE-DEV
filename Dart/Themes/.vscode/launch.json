@@ -1,0 +1,15 @@
+{
+    "configurations": 
+	{
+        
+        "name": "Current File (release mode)",
+
+
+		"type": "dart",
+
+	
+		"request": "launch",
+
+		"cwd": "/foo/bar",
+		}
+    }
