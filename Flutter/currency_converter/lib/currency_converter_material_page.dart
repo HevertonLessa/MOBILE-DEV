@@ -2,9 +2,21 @@ import 'package:flutter/material.dart';
 
 class MaterialHomePage extends StatelessWidget {
   const MaterialHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+        borderSide: BorderSide(
+          color: const Color.fromARGB(170, 0, 0, 0),
+          width: 2.0,
+          style: BorderStyle.solid,
+          strokeAlign: BorderSide.strokeAlignCenter,
+        ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(70),
+        ));
+
+    return Scaffold(
       backgroundColor: Color.fromRGBO(58, 56, 56, 1),
       body: Center(
         child: Column(
@@ -29,15 +41,8 @@ class MaterialHomePage extends StatelessWidget {
                 prefixIconColor: Colors.white,
                 filled: true,
                 fillColor: Color.fromARGB(57, 155, 155, 155),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black12,
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                    strokeAlign: BorderSide.strokeAlignCenter,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(70)), 
-                ),
+                focusedBorder: border,
+                enabledBorder: border,
               ),
             ),
           ],
