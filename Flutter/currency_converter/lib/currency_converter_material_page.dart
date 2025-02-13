@@ -4,22 +4,15 @@ class MaterialHomePage extends StatefulWidget {
   const MaterialHomePage({super.key});
 
   @override
-  State createState() => _MaterialHomePage();
+  State<MaterialHomePage> createState() => _MaterialHomePage();
 }
 
-class _MaterialHomePage extends State {
-  double result = 0;
+class _MaterialHomePage extends State<MaterialHomePage>
+{
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
-  }
-}
-
-class MaterialHomePagee extends StatelessWidget {
-  const MaterialHomePagee({super.key});
-
-  @override
-  Widget build(BuildContext context) {
+    print('built FN');
+    double result = 0;
     TextEditingController textEditingController = TextEditingController();
 
     final border = OutlineInputBorder(
