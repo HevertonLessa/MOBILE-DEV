@@ -53,7 +53,7 @@ class _MaterialHomePageState extends State<MaterialHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'BRL ${result}',
+              'BRL ${result != 0 ? result.toStringAsFixed(2) : result.toStringAsFixed(0)}',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
