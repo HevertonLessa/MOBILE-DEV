@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
+// Tranformar esse app em um conversor , onde consigo calcular consoante o valor de cada moeda ao dia de hoje
+// se Possivel informar quais as formas com melhores taxas 
+
 class MaterialHomePage extends StatefulWidget {
   const MaterialHomePage({super.key});
 
   @override
-  State<MaterialHomePage> createState() => _MaterialHomePage();
+  State<MaterialHomePage> createState() => _MaterialHomePageState();
 }
 
-class _MaterialHomePage extends State<MaterialHomePage>
-{
+class _MaterialHomePageState extends State<MaterialHomePage> {
+  double result = 0;
+  final TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    print('built FN');
-    double result = 0;
-    TextEditingController textEditingController = TextEditingController();
+    print('rebuilt');
 
     final border = OutlineInputBorder(
         borderSide: BorderSide(
@@ -50,7 +53,7 @@ class _MaterialHomePage extends State<MaterialHomePage>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              result.toString(),
+              'BRL ${result}',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -83,7 +86,9 @@ class _MaterialHomePage extends State<MaterialHomePage>
               padding: const EdgeInsets.all(0),
               child: ElevatedButton(
                 onPressed: () {
-                  result = double.parse(textEditingController.text) * 81;
+                  setState(() {
+                    result = double.parse(textEditingController.text) * 5.9;
+                  });
                 },
                 style: ElevatedButton.styleFrom(
                   surfaceTintColor: (Colors.black),
