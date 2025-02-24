@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Tranformar esse app em um conversor , onde consigo calcular consoante o valor de cada moeda ao dia de hoje
-// se Possivel informar quais as formas com melhores taxas 
+// se Possivel informar quais as formas com melhores taxas
 
 class MaterialHomePage extends StatefulWidget {
   const MaterialHomePage({super.key});
@@ -13,6 +13,17 @@ class MaterialHomePage extends StatefulWidget {
 class _MaterialHomePageState extends State<MaterialHomePage> {
   double result = 0;
   final TextEditingController textEditingController = TextEditingController();
+
+  void convert() {
+    result = double.parse(textEditingController.text) * 5.9;
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
