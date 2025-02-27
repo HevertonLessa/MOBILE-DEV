@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:weather_app/addional_info_item.dart';
+import 'package:weather_app/hourly_forecast.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -24,6 +26,7 @@ class WeatherScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //main card
             SizedBox(
@@ -31,7 +34,7 @@ class WeatherScreen extends StatelessWidget {
               child: Card(
                 color: const Color.fromARGB(255, 41, 45, 47),
                 elevation: 10,
-                shadowColor: Color.fromARGB(255, 74, 74, 74),
+                shadowColor: Color.fromARGB(156, 1, 1, 1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16)),
                 child: ClipRRect(
@@ -69,13 +72,43 @@ class WeatherScreen extends StatelessWidget {
             ),
             // weather forecast cards
             const SizedBox(height: 25),
-            const Placeholder(
-              fallbackHeight: 150,
+            const Text(
+              'Weather Forecast',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                ],
+              ),
             ),
             // additional information
             const SizedBox(height: 25),
-            const Placeholder(
-              fallbackHeight: 150,
+            const Text(
+              'Additional Information',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                AdditionalInfoItem (),
+                AdditionalInfoItem (),
+                AdditionalInfoItem (),
+              ],
             ),
           ],
         ),
